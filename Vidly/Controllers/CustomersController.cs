@@ -24,25 +24,6 @@ namespace Vidly.Controllers
 			_context.Dispose();
 		}
 
-		public ActionResult New()
-		{
-			var membershipTypes = _context.MembershipType.ToList();
-			var viewModel = new NewCustomerViewModel
-			{
-				MembershipTypes = membershipTypes
-			};
-
-			return View(viewModel);
-		}
-
-		[HttpPost]
-		public ActionResult Create(Customers customer)
-		{
-			_context.Customers.Add(customer);
-			_context.SaveChanges();
-			return RedirectToAction("Index", "Customers");
-		}
-
 		// GET: Customers
 		public ViewResult Index()
 		{
@@ -58,6 +39,55 @@ namespace Vidly.Controllers
 				return HttpNotFound();
 			}
 			return View(customer);
+		}
+
+		public ActionResult New()
+		{
+			var membershipTypes = _context.MembershipType.ToList();
+			var viewModel = new CustomerFormViewModel
+			{
+				MembershipTypes = membershipTypes
+			};
+			return View("CustomerForm", viewModel);
+		}
+
+		[HttpPost]
+		public ActionResult Save(Customers customer) // Model binding
+		{
+			if (customer.Id == 0)
+			{
+				// add a new customer
+				_context.Customers.Add(customer);
+			}
+			else
+			{
+				var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+
+				customerInDb.Name = customer.Name;
+				customerInDb.Birthdate = customer.Birthdate;
+				customerInDb.MembershipTypeId = customer.MembershipTypeId;
+				customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+			}
+
+			_context.SaveChanges();
+			return RedirectToAction("Index", "Customers");
+		}
+
+		public ActionResult Edit(int Id)
+		{
+			// get the customer from the DB
+			var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
+			if (customer == null)
+				return HttpNotFound();
+
+			var viewModel = new CustomerFormViewModel
+			{
+				Customer = customer,
+				MembershipTypes = _context.MembershipType.ToList(),
+			};
+
+			// Override the View to look for a 
+			return View("CustomerForm", viewModel);
 		}
 	}
 }

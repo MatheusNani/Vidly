@@ -142,3 +142,15 @@ C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addNumberInStockToMovies.reso
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddGenreTypesToMovies.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenreTypes.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.Changes.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addChangesToMovieModel.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.RemoveMovieAndGenres.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addMovieModelChanged.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.RemoveMovie.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addNameToMovie.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addReleasedDateToMovie.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addAddedDateToMovie.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addNumberInStockToMovie.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addGenreIdToMovie.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.RemoveMovieAgain.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMovieAgain.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopularGerenTypesAgain.resources
