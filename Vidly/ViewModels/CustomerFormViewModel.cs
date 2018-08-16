@@ -12,6 +12,20 @@ namespace Vidly.ViewModels
 		// In the view we are not going to use any of the methods of List, such as Add,Remove.
 		// So It's just better to use IENumerable
 		public IEnumerable<MembershipType> MembershipTypes { get; set; }
-		public Customers Customer { get; set; }
+		public Customers Customers { get; set; }
+
+		public string Title
+		{
+			get
+			{
+				if (Customers != null && Customers.Id != 0)
+				{
+					return "Edit Customer";
+				}
+
+				return "New Customer";
+			}
+		}
+
 	}
 }

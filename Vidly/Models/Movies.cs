@@ -20,6 +20,7 @@ namespace Vidly.Models
 
 		public DateTime AddedDate { get; set; }
 
+		[Range(1, 20)]
 		[Required(ErrorMessage = "Please enter Number in stock.")]
 		[Display(Name = "Number in Stock")]
 		public int NumberInStock { get; set; }

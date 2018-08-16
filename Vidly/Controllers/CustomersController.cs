@@ -1,10 +1,9 @@
 using System;
-using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
-using System.Data.Entity;
 using Vidly.ViewModels;
 
 namespace Vidly.Controllers
@@ -44,32 +43,63 @@ namespace Vidly.Controllers
 		public ActionResult New()
 		{
 			var membershipTypes = _context.MembershipType.ToList();
+
 			var viewModel = new CustomerFormViewModel
 			{
+				Customers = new Customers(),
 				MembershipTypes = membershipTypes
 			};
 			return View("CustomerForm", viewModel);
 		}
 
 		[HttpPost]
-		public ActionResult Save(Customers customer) // Model binding
+		[ValidateAntiForgeryToken]
+		public ActionResult Save(CustomerFormViewModel customer) // Model binding
 		{
-			if (customer.Id == 0)
+			if (!ModelState.IsValid)
 			{
-				// add a new customer
-				_context.Customers.Add(customer);
+				var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+				var viewModel = new CustomerFormViewModel
+				{
+					Customers = customer.Customers,
+					MembershipTypes = _context.MembershipType.ToList()
+				};
+
+				return View("CustomerForm", viewModel);
+			}
+
+			// If Id == 0 New Customer and It should save it. it's placed in the Customerform as a hiden Field.
+			if (customer.Customers.Id == 0)
+			{
+				// Saving Data into DB
+				_context.Customers.Add(customer.Customers);
 			}
 			else
 			{
-				var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+				//I could use TryUpdateModel(customerInDb), but it will update all properties
+				//Or AutoMapper Library like so Mapper.Map(customer, customerInDb);
 
-				customerInDb.Name = customer.Name;
-				customerInDb.Birthdate = customer.Birthdate;
-				customerInDb.MembershipTypeId = customer.MembershipTypeId;
-				customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+				var customerInDb = _context.Customers.Single(c => c.Id == customer.Customers.Id);
+
+				customerInDb.Name = customer.Customers.Name;
+				customerInDb.Birthdate = customer.Customers.Birthdate;
+				customerInDb.MembershipTypeId = customer.Customers.MembershipTypeId;
+				customerInDb.IsSubscribedToNewsletter = customer.Customers.IsSubscribedToNewsletter;
 			}
 
-			_context.SaveChanges();
+			try
+			{
+				_context.SaveChanges();
+			}
+			catch (DbEntityValidationException e)
+			{
+				Console.WriteLine(e);
+			}
+
+
+
+			// After saving the newCustomer or the Edited one let's redirect the user to customer List
 			return RedirectToAction("Index", "Customers");
 		}
 
@@ -82,7 +112,7 @@ namespace Vidly.Controllers
 
 			var viewModel = new CustomerFormViewModel
 			{
-				Customer = customer,
+				Customers = customer,
 				MembershipTypes = _context.MembershipType.ToList(),
 			};
 
