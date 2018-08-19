@@ -1,9 +1,3 @@
-C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.Compression.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\VBCSCompiler.exe
 C:\Projects\Vidly\Vidly\bin\ApplicationInsights.config
 C:\Projects\Vidly\Vidly\bin\Vidly.dll.config
 C:\Projects\Vidly\Vidly\bin\Vidly.dll
@@ -15,9 +9,13 @@ C:\Projects\Vidly\Vidly\bin\roslyn\csi.exe
 C:\Projects\Vidly\Vidly\bin\roslyn\csi.exe.config
 C:\Projects\Vidly\Vidly\bin\roslyn\csi.rsp
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -27,6 +25,7 @@ C:\Projects\Vidly\Vidly\bin\roslyn\System.Console.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Diagnostics.Process.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.Compression.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.FileSystem.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -49,8 +48,10 @@ C:\Projects\Vidly\Vidly\bin\roslyn\System.Xml.XPath.XDocument.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\vbc.exe
 C:\Projects\Vidly\Vidly\bin\roslyn\vbc.exe.config
 C:\Projects\Vidly\Vidly\bin\roslyn\vbc.rsp
+C:\Projects\Vidly\Vidly\bin\roslyn\VBCSCompiler.exe
 C:\Projects\Vidly\Vidly\bin\roslyn\VBCSCompiler.exe.config
 C:\Projects\Vidly\Vidly\bin\Antlr3.Runtime.dll
+C:\Projects\Vidly\Vidly\bin\AutoMapper.dll
 C:\Projects\Vidly\Vidly\bin\EntityFramework.dll
 C:\Projects\Vidly\Vidly\bin\EntityFramework.SqlServer.dll
 C:\Projects\Vidly\Vidly\bin\Microsoft.AI.Agent.Intercept.dll
@@ -78,7 +79,10 @@ C:\Projects\Vidly\Vidly\bin\Microsoft.Web.Infrastructure.dll
 C:\Projects\Vidly\Vidly\bin\Newtonsoft.Json.dll
 C:\Projects\Vidly\Vidly\bin\Owin.dll
 C:\Projects\Vidly\Vidly\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Projects\Vidly\Vidly\bin\System.Net.Http.Formatting.dll
 C:\Projects\Vidly\Vidly\bin\System.Web.Helpers.dll
+C:\Projects\Vidly\Vidly\bin\System.Web.Http.dll
+C:\Projects\Vidly\Vidly\bin\System.Web.Http.WebHost.dll
 C:\Projects\Vidly\Vidly\bin\System.Web.Mvc.dll
 C:\Projects\Vidly\Vidly\bin\System.Web.Optimization.dll
 C:\Projects\Vidly\Vidly\bin\System.Web.Razor.dll
@@ -86,6 +90,10 @@ C:\Projects\Vidly\Vidly\bin\System.Web.WebPages.Deployment.dll
 C:\Projects\Vidly\Vidly\bin\System.Web.WebPages.dll
 C:\Projects\Vidly\Vidly\bin\System.Web.WebPages.Razor.dll
 C:\Projects\Vidly\Vidly\bin\WebGrease.dll
+C:\Projects\Vidly\Vidly\bin\AutoMapper.xml
+C:\Projects\Vidly\Vidly\bin\System.Net.Http.Formatting.xml
+C:\Projects\Vidly\Vidly\bin\System.Web.Http.xml
+C:\Projects\Vidly\Vidly\bin\System.Web.Http.WebHost.xml
 C:\Projects\Vidly\Vidly\bin\System.Web.Helpers.xml
 C:\Projects\Vidly\Vidly\bin\System.Web.Mvc.xml
 C:\Projects\Vidly\Vidly\bin\System.Web.Optimization.xml
@@ -115,6 +123,7 @@ C:\Projects\Vidly\Vidly\bin\Microsoft.AI.DependencyCollector.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.AI.Web.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedToNewsletter.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addMembershipType.resources
@@ -154,4 +163,3 @@ C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.pdb
-C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
