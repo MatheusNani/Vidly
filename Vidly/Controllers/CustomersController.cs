@@ -96,9 +96,7 @@ namespace Vidly.Controllers
 			{
 				Console.WriteLine(e);
 			}
-
-
-
+					   
 			// After saving the newCustomer or the Edited one let's redirect the user to customer List
 			return RedirectToAction("Index", "Customers");
 		}
