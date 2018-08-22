@@ -163,3 +163,4 @@ C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.pdb
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUser.resources

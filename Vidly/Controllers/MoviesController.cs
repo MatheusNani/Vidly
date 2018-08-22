@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
-using System.Data.Entity;
 using Vidly.ViewModels;
-using System.Data.Entity.Validation;
 
 namespace Vidly.Controllers
 {
@@ -27,7 +25,12 @@ namespace Vidly.Controllers
 		// GET: Movies
 		public ViewResult Index()
 		{
-			return View();
+			// Here we are setting only the Admin user, the one that has CanManageMovie access to 
+			//Edit, Delete and add a New Movie.
+			if (User.IsInRole(RoleName.CanManageMovie))
+				return View("List");
+
+			return View("ReadOnlyList");
 		}
 
 		public ActionResult Details(int Id)
@@ -40,6 +43,7 @@ namespace Vidly.Controllers
 			return View(movie);
 		}
 
+		[Authorize(Roles = RoleName.CanManageMovie)]
 		public ActionResult New()
 		{
 			var genre = _context.GenreTypes.ToList();
@@ -51,6 +55,7 @@ namespace Vidly.Controllers
 			return View("MoviesForm", viewModel);
 		}
 
+		[Authorize(Roles = RoleName.CanManageMovie)]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult Save(Movies movies)
@@ -95,6 +100,7 @@ namespace Vidly.Controllers
 			return RedirectToAction("Index", "Movies");
 		}
 
+		[Authorize(Roles = RoleName.CanManageMovie)]
 		public ActionResult Edit(int Id)
 		{
 			var movie = _context.Movies.SingleOrDefault(m => m.Id == Id);
