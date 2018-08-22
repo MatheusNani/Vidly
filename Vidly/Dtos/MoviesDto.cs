@@ -14,16 +14,18 @@ namespace Vidly.Dtos
 		[StringLength(100)]
 		public string Name { get; set; }
 
-		[Required(ErrorMessage = "Please enter Release Date.")]		
+		[Required(ErrorMessage = "Please enter Release Date.")]
 		public DateTime? ReleasedDate { get; set; }
 
 		public DateTime AddedDate { get; set; }
 
 		[Range(1, 20)]
-		[Required(ErrorMessage = "Please enter Number in stock.")]		
+		[Required(ErrorMessage = "Please enter Number in stock.")]
 		public int NumberInStock { get; set; }
-		
+
 		public byte GenreTypesId { get; set; }
+
+		public GenreTypesDto GenreTypes { get; set; }
 
 		public MoviesDto()
 		{

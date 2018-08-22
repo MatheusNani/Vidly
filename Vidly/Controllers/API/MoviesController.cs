@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Http;
 using Vidly.Dtos;
 using Vidly.Models;
+using System.Data.Entity;
 
 namespace Vidly.Controllers.API
 {
@@ -22,7 +22,10 @@ namespace Vidly.Controllers.API
 		[HttpGet]
 		public IEnumerable<MoviesDto> GetAllMovies()
 		{
-			return _context.Movies.ToList().Select(Mapper.Map<Movies, MoviesDto>);
+			return _context.Movies
+				.Include(m => m.GenreTypes)
+				.ToList()
+				.Select(Mapper.Map<Movies, MoviesDto>);
 		}
 
 		[HttpGet]
@@ -49,7 +52,6 @@ namespace Vidly.Controllers.API
 			movieDto.Id = movie.Id;
 
 			return Created(new Uri(Request.RequestUri + "/" + movie.Id), movieDto);
-
 		}
 
 		[HttpPut]

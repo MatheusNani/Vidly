@@ -6,9 +6,10 @@ using System.Net;
 using System.Web.Http;
 using Vidly.Dtos;
 using Vidly.Models;
+using System.Data.Entity;
 
 namespace Vidly.Controllers.API
-{	
+{
 	public class CustomersController : ApiController
 	{
 		private ApplicationDbContext _context;
@@ -22,11 +23,14 @@ namespace Vidly.Controllers.API
 		[HttpGet]
 		public IEnumerable<CustomersDto> GetCustomers()
 		{
-			return _context.Customers.ToList().Select(Mapper.Map<Customers, CustomersDto>);
+			return _context.Customers
+				.Include(c => c.MembershipType)
+				.ToList()
+				.Select(Mapper.Map<Customers, CustomersDto>);
 		}
 
 		//GET /API/CUSTOMERS/ID
-		[HttpGet]		
+		[HttpGet]
 		public IHttpActionResult GetCustomer(int Id)
 		{
 			var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
@@ -54,7 +58,7 @@ namespace Vidly.Controllers.API
 		}
 
 		//PUT /API/CUSTOMERS/ID
-		[HttpPut]		
+		[HttpPut]
 		public void UpdateCustomer(int Id, CustomersDto customerDto)
 		{
 			if (!ModelState.IsValid)
@@ -71,7 +75,7 @@ namespace Vidly.Controllers.API
 		}
 
 		//DELETE /API/CUSTOMERS/ID
-		[HttpDelete]		
+		[HttpDelete]
 		public void DeleteCustomer(int Id)
 		{
 			var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == Id);
