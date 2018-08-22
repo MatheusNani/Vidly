@@ -123,6 +123,7 @@ C:\Projects\Vidly\Vidly\bin\Microsoft.AI.DependencyCollector.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.AI.Web.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedToNewsletter.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addMembershipType.resources
@@ -157,10 +158,10 @@ C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.RemoveMovieAgain.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMovieAgain.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopularGerenTypesAgain.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.ChangesToMoviesModel.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUser.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddPhoneToApplicationUser.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.pdb
-C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
-C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUser.resources

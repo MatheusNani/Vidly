@@ -148,7 +148,13 @@ namespace Vidly.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+				var user = new ApplicationUser
+				{
+					UserName = model.Email,
+					Email = model.Email,
+					Phone = model.Phone
+
+				};
 				var result = await UserManager.CreateAsync(user, model.Password);
 				if (result.Succeeded)
 				{
@@ -160,7 +166,7 @@ namespace Vidly.Controllers
 						and AspNetUsersRoles. 
 						Remove the information of the tables AspNetUsers and AspNetRoles above and run Update-database.
 					 */
-					
+
 					/*
 					var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
 					var roleManager = new RoleManager<IdentityRole>(roleStore);
