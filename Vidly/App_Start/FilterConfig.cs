@@ -12,6 +12,7 @@ namespace Vidly
 			// add Authentication to all pages.
 			//to be able to see the home page, add [AllowAnonymous] in the HomeController.
 			filters.Add(new AuthorizeAttribute());
+			filters.Add(new RequireHttpsAttribute());
 		}
 	}
 }
