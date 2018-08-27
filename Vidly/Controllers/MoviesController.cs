@@ -73,8 +73,7 @@ namespace Vidly.Controllers
 			}
 
 			if (movies.Id == 0)
-			{
-				//movies.AddedDate = DateTime.Now;
+			{				
 				_context.Movies.Add(movies);
 				movies.NumberAvaliable = movies.NumberInStock;
 			}
