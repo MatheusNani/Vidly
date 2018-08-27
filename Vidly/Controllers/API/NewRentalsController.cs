@@ -24,6 +24,9 @@ namespace Vidly.Controllers.API
 
 			foreach (var movie in movies)
 			{
+				if(movie.NumberAvaliable == 0)
+					return BadRequest("Movie is not available");
+
 				movie.NumberAvaliable--;
 
 				var rental = new Rental
