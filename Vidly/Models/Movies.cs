@@ -29,7 +29,9 @@ namespace Vidly.Models
 
 		[Display(Name = "Genre Type")]
 		public byte GenreTypesId { get; set; }
-		
+
+		public int NumberAvaliable { get; set; }
+
 		public Movies()
 		{
 			AddedDate = DateTime.Now;

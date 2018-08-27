@@ -24,6 +24,8 @@ namespace Vidly.Controllers.API
 
 			foreach (var movie in movies)
 			{
+				movie.NumberAvaliable--;
+
 				var rental = new Rental
 				{
 					Customer = customer,
@@ -32,9 +34,10 @@ namespace Vidly.Controllers.API
 				};
 
 				_context.Rentals.Add(rental);
-				_context.SaveChanges();
+
 			}
 
+			_context.SaveChanges();
 			return Ok();
 		}
 	}

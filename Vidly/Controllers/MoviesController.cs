@@ -76,6 +76,7 @@ namespace Vidly.Controllers
 			{
 				//movies.AddedDate = DateTime.Now;
 				_context.Movies.Add(movies);
+				movies.NumberAvaliable = movies.NumberInStock;
 			}
 			else
 			{
@@ -85,6 +86,7 @@ namespace Vidly.Controllers
 				movieInDb.ReleasedDate = movies.ReleasedDate;
 				movieInDb.GenreTypesId = movies.GenreTypesId;
 				movieInDb.NumberInStock = movies.NumberInStock;
+				movieInDb.NumberAvaliable = movies.NumberInStock;
 			}
 
 			try
