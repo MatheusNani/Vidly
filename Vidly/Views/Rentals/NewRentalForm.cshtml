@@ -21,7 +21,6 @@
             <ul id="movies" class="list-group"></ul>
         </div>
     </div>
-
     <button class="btn btn-primary">Submit</button>
 </form>
 @section Scripts{
@@ -85,9 +84,9 @@
                     method: "POST",
                     data: vm
                 }).done(function () {
-                    console.log("Success.");    
+                    toastr.success("Rentals successfully recorded.");
                 }).fail(function () {
-
+                    toastr.error("Something unexpected happened.");
                 });
             });
 
