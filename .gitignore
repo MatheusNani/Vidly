@@ -1,0 +1,5 @@
+*/vidly/App_Data/*
+
+# SQL Server files
+*.mdf
+*.ldf
