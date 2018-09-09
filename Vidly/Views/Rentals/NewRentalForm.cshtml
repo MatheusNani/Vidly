@@ -24,7 +24,6 @@
     <button class="btn btn-primary">Submit</button>
 </form>
 @section Scripts{
-
     @Scripts.Render("~/bundles/jqueryval");
 
     <script>
@@ -55,7 +54,6 @@
                 });
 
             //Movies Typeahead
-
             var movies = new Bloodhound({
                 datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -83,9 +81,14 @@
                 return vm.CustomerIds && vm.CustomerIds !== 0;
             }, "Please select a valid customer.");
 
+
             $.validator.addMethod("ValidMovie", function () {
-                return vm.MoviesIds.length > 0;
-            }, "Please select at least one movie.");
+                if (vm.MoviesIds.length > 0 && vm.MoviesIds.length <= 3) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }, "At least one movie and a maximum of 3.");
 
             //Client-side Validation
             var validator = $("#NewRental").validate({

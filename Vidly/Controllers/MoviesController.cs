@@ -62,7 +62,7 @@ namespace Vidly.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
-				var errors = ModelState.Values.SelectMany(v => v.Errors);
+				//var errors = ModelState.Values.SelectMany(v => v.Errors);
 				var viewModel = new MoviesFormViewModel
 				{
 					Movies = movies,
