@@ -1,5 +1,5 @@
 # Vidly
-Rent Movies Project
+Rent Movies Project usign MVC5, WEBAPI and EF6
 
 ## Social Login
 To enable this option you have to create a Facebook Developer account and Add a new App to get the appID and appSecret.
