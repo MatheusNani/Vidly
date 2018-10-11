@@ -47,12 +47,18 @@ namespace Vidly.Controllers
 		public ActionResult New()
 		{
 			var genre = _context.GenreTypes.ToList();
+
 			var viewModel = new MoviesFormViewModel
 			{
 				Movies = new Movies(),
 				GenreTypes = genre
 			};
 			return View("MoviesForm", viewModel);
+		}
+
+		public ActionResult ReturnMovie()
+		{
+			return View("ReturnMovie");
 		}
 
 		[Authorize(Roles = RoleName.CanManageMovie)]

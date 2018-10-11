@@ -1,0 +1,63 @@
+@model dynamic
+@{
+    ViewBag.Title = "Return Movie";
+}
+<div class="row">
+    <h2>Return Movie</h2>
+    <br />
+    <form>
+        <div class="form-group">                      
+                <div class="tt-container col-sm">
+                    <input id="customer" name="customer" placeholder="Customer" data-rule-ValidCustomer="true" required type="text" class="form-control" />
+                    <button class="btn btn-info col-sm">Search</button>
+                </div>            
+        </div>
+        <!--Template-->
+        <table class="table tab-content table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Quantity</th>
+                    <th>Genre</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Matheus</td>
+                    <td>1</td>
+                    <td>Action</td>
+                    <td><button class="btn btn-success " type="submit">Return</button></td>
+                </tr>
+            </thead>
+        </table>
+
+    </form>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            var vm = {}
+
+            var customers = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                    url: '/api/customers?query=%QUERY',
+                    wildcard: '%QUERY'
+                }
+            });
+
+            $('#customer').typeahead({
+                minLength: 3,
+                highlight: true
+            }, {
+                    name: 'customers',
+                    display: 'name',
+                    source: customers
+                }).on("typeahead:select", function (e, customer) {
+                    vm.CustomerId = customer.id;
+                });
+        });
+    </script>
+}

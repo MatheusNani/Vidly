@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
     <IISExpressSSLPort>44355</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -231,6 +231,7 @@
     <Compile Include="Controllers\API\CustomersController.cs" />
     <Compile Include="Controllers\API\MoviesController.cs" />
     <Compile Include="Controllers\API\NewRentalsController.cs" />
+    <Compile Include="Controllers\API\RentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -241,6 +242,7 @@
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MoviesDto.cs" />
     <Compile Include="Dtos\NewRentalDto.cs" />
+    <Compile Include="Dtos\RentalDto.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -725,6 +727,8 @@
     <Content Include="Views\Movies\MoviesForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <Content Include="Views\Rentals\NewRentalForm.cshtml" />
+    <Content Include="Views\Rentals\ListRental.cshtml" />
+    <Content Include="Views\Movies\ReturnMovie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

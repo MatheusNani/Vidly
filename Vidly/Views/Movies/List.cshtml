@@ -1,19 +1,14 @@
 @model IEnumerable<Vidly.Models.Movies>
 @{
-    /**/
-
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Movies</h2>
-<div>
-    @Html.ActionLink("NEW MOVIE", "New", "Movies", new { @class = "btn btn-primary" })
-    @Html.ActionLink("DELETE ALL MOVIES", "DeleteAll", "Movies", new { @class = "btn btn-success" })
+<div class="row">
+    <div class="col-lg-1">@Html.ActionLink("NEW MOVIE", "New", "Movies", new { @class = "btn btn-primary" })</div>
+    <div class="col-lg-1">@Html.ActionLink("RETURN MOVIE", "ReturnMovie", "Movies", new { @class = "btn btn-danger" })</div>
 </div>
-
 <br />
 <br />
-
 <table id="movies" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -24,7 +19,6 @@
     </thead>
     <tbody></tbody>
 </table>
-
 @section scripts{
     <script>
         $(document).ready(function () {
@@ -50,7 +44,6 @@
                         }
                     }
                 ]
-
             });
 
             $("#movies").on("click", ".js-delete", function () {

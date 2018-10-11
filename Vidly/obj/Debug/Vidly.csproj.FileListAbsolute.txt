@@ -52,6 +52,7 @@ C:\Projects\Vidly\Vidly\bin\roslyn\vbc.rsp
 C:\Projects\Vidly\Vidly\bin\roslyn\VBCSCompiler.exe.config
 C:\Projects\Vidly\Vidly\bin\Antlr3.Runtime.dll
 C:\Projects\Vidly\Vidly\bin\AutoMapper.dll
+C:\Projects\Vidly\Vidly\bin\Elmah.dll
 C:\Projects\Vidly\Vidly\bin\EntityFramework.dll
 C:\Projects\Vidly\Vidly\bin\EntityFramework.SqlServer.dll
 C:\Projects\Vidly\Vidly\bin\Glimpse.Ado.dll
@@ -165,11 +166,10 @@ C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.ChangesToMoviesModel.resource
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUser.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddPhoneToApplicationUser.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddRentalModel.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNumberAvaliableToMovies.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.pdb
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
-C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNumberAvaliableToMovies.resources
-C:\Projects\Vidly\Vidly\bin\Elmah.dll
