@@ -23,13 +23,17 @@ namespace Vidly.Controllers.API
 		[HttpGet]
 		public IHttpActionResult GetCustomers(string query = null)
 		{
-			var customerQuery = _context.Customers
-				.Include(c => c.MembershipType);
+			var customerQuery = _context
+										.Customers
+										.Include(c => c.MembershipType);
 
 			if (!String.IsNullOrWhiteSpace(query))
-				customerQuery = customerQuery.Where(c => c.Name.Contains(query));
+				customerQuery = customerQuery
+											.Where(c => c.Name.Contains(query) && 
+											c.Isdelinquent == false);
 
-			var customerDtos = customerQuery.ToList()
+			var customerDtos = customerQuery
+				.ToList()
 				.Select(Mapper.Map<Customers, CustomersDto>);
 
 			return Ok(customerDtos);
@@ -39,7 +43,11 @@ namespace Vidly.Controllers.API
 		[HttpGet]
 		public IHttpActionResult GetCustomer(int Id)
 		{
-			var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
+			var customer = _context
+									.Customers
+									.Include(c => c.MembershipType)
+									.SingleOrDefault(c => c.Id == Id);
+			//var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
 
 			if (customer == null)
 				return NotFound();

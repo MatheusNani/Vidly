@@ -56,11 +56,6 @@ namespace Vidly.Controllers
 			return View("MoviesForm", viewModel);
 		}
 
-		public ActionResult ReturnMovie()
-		{
-			return View("ReturnMovie");
-		}
-
 		[Authorize(Roles = RoleName.CanManageMovie)]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
@@ -79,7 +74,7 @@ namespace Vidly.Controllers
 			}
 
 			if (movies.Id == 0)
-			{				
+			{
 				_context.Movies.Add(movies);
 				movies.NumberAvaliable = movies.NumberInStock;
 			}
@@ -123,6 +118,12 @@ namespace Vidly.Controllers
 				GenreTypes = _context.GenreTypes.ToList()
 			};
 			return View("MoviesForm", viewModel);
+		}
+
+		[Authorize(Roles = RoleName.CanManageMovie)]
+		public ActionResult ReturnMovie()
+		{
+			return View("ReturnMovie");
 		}
 	}
 }

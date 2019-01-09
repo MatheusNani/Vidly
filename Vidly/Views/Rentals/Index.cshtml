@@ -1,0 +1,41 @@
+@model IEnumerable<Vidly.Models.Rental>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Return Movie</h2>
+<br />
+<table id="Rentals" class="table tab-content table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Rented Date</th>
+            <th>Genre</th>
+            <th>Return</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+@section scripts{
+    <script>
+        $("#Rentals").DataTable({
+            ajax: {
+                url: "/api/NewRentals/9",
+                dataSrc: ""
+            },
+            columns: [
+                { data: "movie.name" },
+                { data: "dateRented" },
+                { data: "movie.genreTypes.name" },
+                {
+                    data: "id",
+                    render: function (data) {
+                        return "<button class='btn btn-success'>Return</button>";
+                    }
+                }
+            ]
+        });
+    </script>
+}
+

@@ -6,9 +6,10 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+
 </head>
 <body>
-
     @Html.Partial("_NavBar")
     <div class="container body-content">
         @RenderBody()
@@ -16,8 +17,7 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - Vidly</p>
         </footer>
-    </div>
-
+    </div>    
     @Scripts.Render("~/bundles/lib")
     @RenderSection("scripts", required: false)
 </body>

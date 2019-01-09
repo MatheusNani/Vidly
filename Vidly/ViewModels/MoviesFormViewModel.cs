@@ -20,7 +20,6 @@ namespace Vidly.ViewModels
 				{
 					return "Edit Movie";
 				}
-
 				return "New Movie";
 			}
 		}

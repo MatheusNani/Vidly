@@ -71,50 +71,50 @@
                     display: 'name',
                     source: movies
                 }).on("typeahead:select", function (e, movie) {
-                    $("#movies").append("<li class=list-group-item>" + movie.name + "</li>");
-                    $("#movie").typeahead("val", "");
 
-                    vm.MoviesIds.push(movie.id);
+                    if (vm.MoviesIds.length < 3) {
+
+                        $("#movies").append("<li class=list-group-item>" + movie.name + "</li>");
+                        $("#movie").typeahead("val", "");
+                        vm.MoviesIds.push(movie.id);
+                    }
                 });
 
             $.validator.addMethod("ValidCustomer", function () {
                 return vm.CustomerIds && vm.CustomerIds !== 0;
             }, "Please select a valid customer.");
 
-
             $.validator.addMethod("ValidMovie", function () {
-                if (vm.MoviesIds.length > 0 && vm.MoviesIds.length <= 3) {
-                    return true;
-                } else {
-                    return false;
-                }
+
+                return vm.MoviesIds.length > 0 && vm.MoviesIds.length < 3;
+
             }, "At least one movie and a maximum of 3.");
 
-            //Client-side Validation
-            var validator = $("#NewRental").validate({
-                submitHandler: function () {
-                    $.ajax({
-                        url: "/api/NewRentals",
-                        method: "post",
-                        data: vm
-                    }).done(function () {
-                        toastr.success("Rentals successfully recorded.");
+        //Client-side Validation
+        var validator = $("#NewRental").validate({
+            submitHandler: function () {
+                $.ajax({
+                    url: "/api/NewRentals",
+                    method: "post",
+                    data: vm
+                }).done(function () {
+                    toastr.success("Rentals successfully recorded.");
 
-                        $("#customer").typeahead("val", "");
-                        $("#movie").typeahead("val", "");
-                        $("#movies").empty();
+                    $("#customer").typeahead("val", "");
+                    $("#movie").typeahead("val", "");
+                    $("#movies").empty();
 
-                        vm = { MoviesIds: [] };
+                    vm = { MoviesIds: [] };
 
-                        validator.resetForm();
+                    validator.resetForm();
 
-                    }).fail(function () {
-                        toastr.error("Something unexpected happened.");
-                    });
+                }).fail(function () {
+                    toastr.error("Something unexpected happened.");
+                });
 
-                    return false;
-                }
-            });
+                return false;
+            }
         });
+                });
     </script>
 }

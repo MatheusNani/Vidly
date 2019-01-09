@@ -1,63 +1,78 @@
-@model dynamic
-@{
-    ViewBag.Title = "Return Movie";
-}
 <div class="row">
     <h2>Return Movie</h2>
     <br />
-    <form>
-        <div class="form-group">                      
+    <!--<div>
+        <form>
+            <div class="form-group">
                 <div class="tt-container col-sm">
-                    <input id="customer" name="customer" placeholder="Customer" data-rule-ValidCustomer="true" required type="text" class="form-control" />
-                    <button class="btn btn-info col-sm">Search</button>
-                </div>            
-        </div>
-        <!--Template-->
-        <table class="table tab-content table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>Movie</th>
-                    <th>Quantity</th>
-                    <th>Genre</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>Matheus</td>
-                    <td>1</td>
-                    <td>Action</td>
-                    <td><button class="btn btn-success " type="submit">Return</button></td>
-                </tr>
-            </thead>
-        </table>
-
-    </form>
+                    <input id="customer" name="customer" placeholder="Customer Name" type="text" class="form-control" />
+                    <button id="btn-search" class="btn btn-info col-sm">Search</button>
+                </div>
+                <div class="tt-container col-sm">
+                </div>
+            </div>
+        </form>
+    </div>
+    -->
+    <table id="Rentals" class="table tab-content table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Movie</th>
+                <th>Rented Date</th>
+                <th>Genre</th>
+                <th>Return</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </div>
-
 @section Scripts{
     <script>
         $(document).ready(function () {
 
-            var vm = {}
-
-            var customers = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-                queryTokenizer: Bloodhound.tokenizers.whitespace,
-                remote: {
-                    url: '/api/customers?query=%QUERY',
-                    wildcard: '%QUERY'
-                }
+            var table = $("#Rentals").DataTable({
+                ajax: {
+                    url: "/api/NewRentals/",
+                    dataSrc: ""
+                },
+                columns: [
+                    { data: "customer.name" },
+                    { data: "movie.name" },
+                    { data: "dateRented" },
+                    { data: "movie.genreTypes.name" },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn btn-success btn-sm js-return' data-rented-id=" + data + ">Return</button>";
+                        },
+                        orderable: false,
+                        width: '45px'
+                    }
+                ]
             });
 
-            $('#customer').typeahead({
-                minLength: 3,
-                highlight: true
-            }, {
-                    name: 'customers',
-                    display: 'name',
-                    source: customers
-                }).on("typeahead:select", function (e, customer) {
-                    vm.CustomerId = customer.id;
+
+            $("#Rentals").on("click", ".js-return", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to Return the movies?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/NewRentals/ReturnMovie/" + button.attr("data-rented-id"),
+                            method: "POST",
+                            success: function () {
+                                button.parents("tr").remove();
+                            }
+                        });
+                    }
                 });
+            });
+
+            // Table
+            $("#btn-search").on("click", function () {
+                table.ajax.url("/api/NewRentals/9").load();
+            });
+
         });
     </script>
 }

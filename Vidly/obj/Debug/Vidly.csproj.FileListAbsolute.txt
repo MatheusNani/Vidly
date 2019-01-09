@@ -3,7 +3,11 @@ C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Collections.Immutable.dll
+C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.FileSystem.dll
+C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projects\Vidly\Vidly\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Projects\Vidly\Vidly\bin\roslyn\System.ValueTuple.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\VBCSCompiler.exe
 C:\Projects\Vidly\Vidly\bin\ApplicationInsights.config
 C:\Projects\Vidly\Vidly\bin\Vidly.dll.config
@@ -28,20 +32,16 @@ C:\Projects\Vidly\Vidly\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Diagnostics.Process.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Diagnostics.StackTrace.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.Compression.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.FileSystem.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.IO.Pipes.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Security.AccessControl.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Security.Claims.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Security.Cryptography.Algorithms.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\System.Security.Cryptography.Primitives.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Security.Principal.Windows.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Text.Encoding.CodePages.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Threading.Thread.dll
-C:\Projects\Vidly\Vidly\bin\roslyn\System.ValueTuple.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Xml.ReaderWriter.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Xml.XmlDocument.dll
 C:\Projects\Vidly\Vidly\bin\roslyn\System.Xml.XPath.dll
@@ -129,6 +129,7 @@ C:\Projects\Vidly\Vidly\bin\Microsoft.AI.DependencyCollector.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.AI.WindowsServer.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.AI.Web.xml
 C:\Projects\Vidly\Vidly\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsSubscribedToNewsletter.resources
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.addMembershipType.resources
@@ -172,4 +173,5 @@ C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cache
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\Projects\Vidly\Vidly\obj\Debug\Vidly.pdb
-C:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojAssemblyReference.cache
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddIsDelinquentFlag.resources
+C:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDiscountrate.resources
